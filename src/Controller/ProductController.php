@@ -111,17 +111,4 @@ class ProductController extends AbstractController
     }
 
 
-    /**
-     * @Route("/searchCategory", name="search_category", methods={"POST"})
-     */
-    public function searchCategory(Request $request): Response
-    {
-        $category = $request->request->get('category');
-
-        if(empty($category)){
-            return $this->redirectToRoute('product_index');
-        }
-
-        return $this->redirectToRoute('product_search', ['category' => $category]);
-    }
 }
